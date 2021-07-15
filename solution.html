@@ -1,0 +1,145 @@
+<html>
+    <head>
+        <title>solution to corruption</title>
+        <style>
+
+#glassmorphism{
+    width: 100%;
+    height: 450px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: transparent;
+}
+
+#glassmorphism .box{
+    position: relative;
+    width: 320px;
+    height: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 30px;
+    transition: 0.5s;
+}
+
+#glassmorphism .box::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transition: 0.5s;
+}
+
+#glassmorphism .box::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transition: 0.5s;
+    filter: blur(30px);
+    transition: 0.5s;
+}
+
+#glassmorphism .box:hover:before,
+#glassmorphism .box:hover:before{
+    transform: skewX(0deg);
+    left: 20px;
+    width: calc(100% - 90px);
+}
+
+#glassmorphism .box:nth-child(1):before,
+#glassmorphism .box:nth-child(1):before{
+    background: linear-gradient(315deg,#ffbc00,#ff0058);
+}
+
+#glassmorphism .box:nth-child(2):before,
+#glassmorphism .box:nth-child(2):before{
+    background: linear-gradient(315deg,#03a9f4,#ff0058);
+
+}
+
+
+.box-content{
+
+z-index: 1;
+}
+
+#glassmorphism .box .box-content{
+    position: relative;
+    left: 0;
+    background: linear-gradient(255,255.255,0.1);
+    backdrop-filter: blur(15px);
+    z-index: 1;
+    height: 250px;
+    border-radius: 8px;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: darkgreen;
+    padding: 5px;
+    box-shadow: 1px 2px 5px 5px greenyellow;
+    font-family: cursive;
+    transition: 0.5s;
+}
+
+#glassmorphism .box .box-content:hover{
+    left: -25px;
+    padding: 60px 40px;
+    animation: animate 2s ease-in-out infinite;
+}
+
+@keyframes animate{
+    0%,100%
+    {
+        transform: translate(10px);
+    }
+    50%
+    {
+        transform: translate(-10px);
+    }
+}
+
+
+        </style>
+    </head>
+    <body>
+        <img src="john.jpg" height="900" width="1340">
+        <br />
+        <br />
+        <br />
+
+        <div id="glassmorphism">
+            <div class="box">
+              <div class="box-content">
+                  <h3>PROTEST</h3>
+                  <p>protest events are a way citizens and groups to come together in public to show large scale support for or opposition to a particular issue.protests,marches,demonstrations and rallies can be powerful tool for anti-corruption campaigners.</p>
+                  <a href="HTTP://www.ipaidabribe.com/#gsc.tab=0">Read more</a>
+              </div>
+          </div>
+          <div class="box">
+              <div class="box-content">
+                  <h3>EMERGENCY NUMBERS</h3>
+                  <p>When ever such dirty act is taking place in your presence there are emergency numbers that you can call for assistance such numbers are 112, 110,etc</p>
+                  
+              </div>
+          </div>
+          </div>
+        </div>
+        
+
+    </body>
+</html>

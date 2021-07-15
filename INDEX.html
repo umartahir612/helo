@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+
+    <style>
+
+  #navbar {
+  background: rgba(20, 80, 25, 5);
+  color: #fff;
+  overflow: auto;
+  font-family: cursive;
+  }
+
+  #navbar a {
+  color: rgb(221, 221, 233);
+  text-decoration: none;
+  }
+
+  #navbar h1 {
+  float: left;
+  padding-top: 10px;
+  text-align: left;
+  }
+
+  #navbar ul {
+  list-style: none;
+  float: right;
+  }
+
+  #navbar ul li {
+  float: left;
+  }
+
+  #navbar ul li a {
+  display: block;
+  padding: 20px;
+  text-align: center;
+  }
+
+  #navbar ul li a:hover, 
+  #navbar ul li a.current {
+  background: rgba(1, 126, 78, 0.26);
+  color: rgb(74, 233, 153);
+  }
+
+  .container {
+  margin: auto;
+  max-width: 1100px;
+  overflow: auto;
+  padding: 0 20px;
+  }
+
+  a{text-decoration: none;}
+
+  #main-footer {
+  text-align: center;
+  background: green;
+  color: #fff;
+  padding: 20px;
+}
+
+body{
+  background-color: ghostwhite;
+}
+
+#main{
+  height: 35rem;
+  width: auto;
+  margin: 0px;
+  padding: 0px;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#sidebar{
+  position: absolute;
+  width: 200px;
+  height: 43rem;
+  background: darkgreen;
+  padding: 0px;
+  margin: 0px;
+  left: -200px;
+  transition: all 500ms linear;
+  z-index: 5;
+}
+
+#sidebar.active{
+  left: 7.6px;
+}
+
+#sidebar ul li{
+  color: whitesmoke;
+  list-style: none;
+  padding: 15px 10px;
+  border-bottom: 1px solid whitesmoke;
+  margin-left: -39px;
+}
+
+#sidebar .toggle-btn{
+  position: absolute;
+  left: 210px;
+  top: 10px;
+}
+
+#sidebar .toggle-btn span{
+  display: block;
+  width: 30px;
+  height: 5px;
+  background: darkgreen;
+  margin: 3px 0px;
+  cursor: pointer;
+}
+
+
+@keyframes animate{
+    0%,100%
+    {
+        transform: translate(10px);
+    }
+    50%
+    {
+        transform: translate(-10px);
+    }
+}
+
+.Slider{
+            width: 800px;
+            height: 500px;
+            border: 1px solid darkgreen;
+            border-radius: 10px;
+            box-shadow: 1px 2px 10px 10px yellowgreen;
+            overflow: hidden;
+        }
+
+        .slides{
+            height: 500px;
+            width: 500%;
+            display: flex;
+        }
+
+        .slides input{
+            display: none;
+        }
+
+        .slide{
+            width: 20%;
+            transition: 2s;
+
+        }
+
+        .slide img{
+            width: 800px;
+            height: 500px;
+        }
+
+        .navigation-manual{
+            position: absolute;
+            width: 800px;
+            margin-top: -40px;
+            display: flex;
+            justify-content: center;
+            
+        }
+
+        .manual-btn{
+            border: 3px solid silver;
+            padding: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 1s;
+        }
+
+        .manual-btn:not(:last-child){
+            margin-right: 40px;
+        }
+
+        .manual-btn:hover{
+            background: greenyellow;
+        }
+
+        #radio1:checked ~ #first{
+            margin-left: 0;
+        }
+        #radio2:checked ~ #first{
+            margin-left: -20%;
+        }
+        #radio3:checked ~ #first{
+            margin-left: -40%;
+        }
+        #radio4:checked ~ #first{
+            margin-left: -60%;
+        }
+        #radio5:checked ~ #first{
+            margin-left: -80%;
+        }
+
+        .navigation-auto{
+            position: absolute;
+            display: flex;
+            width: 800px;
+            justify-content: center;
+            margin-top: -40px;
+        }
+
+        .navigation-auto div{
+            border: 3px solid silver;
+            padding: 5px;
+            border-radius: 10px;
+            transition: 1s;
+            box-shadow: 1px 2px 5px 5px yellowgreen;
+        }
+
+        .navigation-auto div:not(:last-child){
+            margin-right: 40px;
+        }
+
+        #radio1:checked ~ .navigation-auto.auto-btn1{
+            background: greenyellow;
+        }
+
+        #radio2:checked ~ .navigation-auto.auto-btn2{
+           background: greenyellow;
+        }
+
+        #radio3:checked ~ .navigation-auto.auto-btn3{
+            background: greenyellow;
+        }
+
+        #radio4:checked ~ .navigation-auto.auto-btn4{
+            background: greenyellow;
+        }
+
+        #radio5:checked ~ .navigation-auto.auto-btn5{
+            background: greenyellow;
+        }
+        body{
+            background-image: url(../hub/practice/dd.jpg);
+        }
+     
+</style>
+</head>
+<body>
+
+    
+  <header>
+    <nav id="navbar">
+      <div class="container">
+        <h1 class="logo" alt="Fast Biotechnological Crops"><a href="INDEX.HTML">KDF</a></h1>
+        <ul>
+          <li><a href="ENTERPRENUERSHIP WEBSITE.html">ENTREPRENEUR</a> </li>
+          <li><a href="OBSERVATION.html">OBSERVATION</a> </li>
+          <li><a href="solution.html">SOLUTION</a> </li>
+        </ul>
+      </div>  
+    </nav>
+  </header>
+
+  <div id="sidebar">
+    <div class="toggle-btn" onclick="togglesidebar()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul>
+       <li><a href="ENTERPRENUERSHIP WEBSITE.html">ENTREPRENEUR</a> </li>
+          <li><a href="OBSERVATION.html">OBSERVATION</a> </li>
+          <li><a href="solution.html">SOLUTION</a> </li>
+    </ul>
+  </div>
+
+  <div id="main">
+   <img src="joy.jpg" height="200px" width="200px"><br>
+   <img src="index.jpg" height="200px" width="200px">
+    <div class="Slider">
+      <div class="slides">
+          <input type="radio" name="radio-btn" id="radio1">
+          <input type="radio" name="radio-btn" id="radio2">
+          <input type="radio" name="radio-btn" id="radio3">
+          <input type="radio" name="radio-btn" id="radio4">
+          <input type="radio" name="radio-btn" id="radio5">
+  
+          <div class="slide" id="first">
+              <img src="amana1.jpg" alt="image1">
+          </div>
+          <div class="slide">
+              <img src="amana2.jpg" alt="image2">
+          </div>
+          <div class="slide">
+              <img src="rb.jpg" alt="image3">
+          </div>
+          <div class="slide">
+              <img src="amana4 (1).jpg" alt="image4">
+          </div>
+          <div class="slide">
+              <img src="kk1.jpeg" alt="image5">
+          </div>
+      </div>
+          <div class="navigation-auto">
+              <div class="auto-btn1"></div>
+              <div class="auto-btn2"></div>
+              <div class="auto-btn3"></div>
+              <div class="auto-btn4"></div>
+              <div class="auto-btn5"></div>
+          </div>
+      
+      <div class="navigation-manual">
+          <label for="radio1" class="manual-btn"></label>
+          <label for="radio2" class="manual-btn"></label>
+          <label for="radio3" class="manual-btn"></label>
+          <label for="radio4" class="manual-btn"></label>
+          <label for="radio5" class="manual-btn"></label>
+      </div>
+      
+  </div>
+          <script>
+              var counter = 1;
+              setInterval(function(){
+                  document.getElementById('radio' + counter).checked = true;
+                  counter++;
+                  if(counter > 5){
+                      counter = 1;
+                  }
+              },5000)
+          </script>
+   <img src="../PICS/seed (12).jpg" alt="home pice" height="200px" width="200px"><br>
+   <img src="../PICS/seed (13).jpg" alt="home pice" height="200px" width="200px">
+  </div>
+  </div>
+  </div>
+  
+
+</body>
+</html>
